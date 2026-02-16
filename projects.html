@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Nico Maggioli</title>
+    <meta name="description" content="Selected projects by Nico Maggioli - Product design, branding, packaging, and more." />
+    <link rel="icon" type="image/png" href="/nm_fav.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260213-3" />
+    <link rel="stylesheet" href="/styles.css?v=arena-20260214-3" />
+    <style>
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 24px;
+        padding: 24px 68px 68px;
+      }
+      
+      .project-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        overflow: hidden;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        cursor: pointer;
+      }
+      
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--muted);
+      }
+      
+      .project-image {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .project-info {
+        padding: 20px;
+      }
+      
+      .project-category {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--muted-2);
+        margin-bottom: 8px;
+      }
+      
+      .project-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--text);
+        margin: 0;
+      }
+      
+      @media (max-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+          padding: 16px 16px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <a class="brand-mark" href="/" aria-label="Home">
+            <img src="/logo-nm.png" alt="Nico Maggioli logo" loading="eager" decoding="async" />
+          </a>
+          <a class="search-link" href="/" aria-label="Portfolio home">Nico Maggioli</a>
+        </div>
+
+        <div class="topbar-right">
+          <nav class="top-nav" aria-label="Site">
+            <a class="top-nav-link" href="/">Work</a>
+            <a class="top-nav-link is-active" href="/projects.html">Projects</a>
+            <a class="top-nav-link" href="/about.html">About</a>
+            <a class="top-nav-link" href="/contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-shell">
+        <section class="channel-head">
+          <h1 class="channel-title">Selected Projects</h1>
+          <p class="channel-subtitle channel-subtitle-single-line">
+            A curated collection of product design, branding, and creative work.
+          </p>
+        </section>
+
+        <section class="projects-grid">
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/lotADLU8jC28TAbY9FRnyXqjkd0.png" alt="Boreal - Product Design" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Product Design</p>
+              <h2 class="project-title">Boreal</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/xaPoeMXPpheSUAoAjS69gbK01E.png" alt="Nestquest - Branding" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Branding</p>
+              <h2 class="project-title">Nestquest</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/i6VG3Eb6qmZPtQHNLXswh8h8i6c.png" alt="Peak - Packaging" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Packaging</p>
+              <h2 class="project-title">Peak</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/S4jYYQGEoVPP6KV4NWIF6GzXqH8.png" alt="Cognis - AI Generated Comic" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Comic Book</p>
+              <h2 class="project-title">Cognis (AI generated comic)</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/OqeXHVp7Yb81gOPFkAm025icyNI.png" alt="Pawlish - Packaging & Ads" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Packaging & Ads</p>
+              <h2 class="project-title">Pawlish</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/DrU28gWRIzTFGKwxOafPNh5a6CI.png" alt="Voiage - Website" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Website</p>
+              <h2 class="project-title">Voiage</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/kCA9rY2brMrFEMbs707qg7KOwVM.png" alt="Mirage - Branding" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Branding</p>
+              <h2 class="project-title">Mirage</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/JYSSxIvjBg8qG4uVVKhAYghrI.png" alt="OXA - Product Design" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Product Design</p>
+              <h2 class="project-title">OXA</h2>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="https://framerusercontent.com/images/arhrHDdgYmhvfQyxt8KHfwe1I.png" alt="Sessio - Advertising" loading="lazy" />
+            <div class="project-info">
+              <p class="project-category">Advertising</p>
+              <h2 class="project-title">Sessio</h2>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
