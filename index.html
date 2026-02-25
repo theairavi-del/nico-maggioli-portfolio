@@ -11,7 +11,92 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-  </head>
+  
+    <style>
+        /* ORAGE-STYLE LOADER */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+        }
+
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .loader-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-bar-container {
+            width: 100%;
+            height: 2px;
+            background: #333;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #fff;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* HERO SECTION */
+        .n-hero {
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: calc(100vh - 56px); /* full page minus topbar */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .n-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        /* Eliminate double top margin for channel-head below hero */
+        .channel-head {
+            margin-top: 40px !important;
+        }
+    </style>
+\n  </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
@@ -32,7 +117,27 @@
         </div>
       </header>
 
-      <main class="page-shell">
+      <main class="page-shell">\n
+    <!-- ORAGE LOADER -->
+    <div class="loader-overlay" id="n-loader">
+        <div class="loader-content">
+            <div>Console setup</div>
+            <div>-------------</div>
+            <div id="loader-text">Loading site : 0%</div>
+            <div>Setting type : {NICOMAGGIOLI PORTFOLIO}</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NICO HERO -->
+    <section class="n-hero">
+        <video class="n-hero-video" autoplay muted loop playsinline>
+            <source src="/Animation_Reel.mp4" type="video/mp4">
+        </video>
+    </section>
+
         <section class="channel-head">
           <h1 class="channel-title">Nico Maggioli / Design Lab / Live Work Archive</h1>
           <p class="channel-subtitle channel-subtitle-single-line">
@@ -105,5 +210,30 @@
     </template>
 
     <script src="/app.js?v=arena-20260214-3" defer></script>
-  </body>
+  
+    <script>
+        // ORAGE LOADER LOGIC
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('n-loader');
+            const loaderBar = document.getElementById('loader-bar');
+            const loaderText = document.getElementById('loader-text');
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 5;
+                if (progress > 100) progress = 100;
+                
+                if(loaderBar) loaderBar.style.width = progress + '%';
+                if(loaderText) loaderText.innerText = 'Loading site : ' + progress + '%';
+                
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        if(loader) loader.classList.add('hidden');
+                    }, 400); 
+                }
+            }, 80);
+        });
+    </script>
+\n  </body>
 </html>
